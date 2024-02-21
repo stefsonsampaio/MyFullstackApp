@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container-main {
+    margin-top: 60px;
+}
+
+.container-cadastro,
+.container-login,
+.container-home {
+    margin-top: 110px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: (0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 75px;
+    min-height: 75px;
+    background-color: #004980;
+    color: aliceblue;
+    box-shadow: 4px 4px 4px 1px #00000080;
+}
+
+.menu-button {
+    display: block;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    z-index: 100;
+    min-width: 200px;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.menu-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: aliceblue;
+    padding: 0 1rem;
+}
+
+.nav-bar {
+    display: flex;
+}
+
+.nav-bar a {
+    display: block;
+    color: aliceblue;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    border: none;
+}
+
+.nav-bar a.active {
+    background: aliceblue;
+    color: #004980;
+}
+
+.container-footer {
+    display: flex;
+    flex: none;
+    padding: 0 1rem;
+    background: #004980;
+    color: aliceblue;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.container-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.form-home {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.nav-link {
+    text-align: center;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.container-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+}
+
+.form-cadastro label {
+    font-size: 1.5rem;
+    color: #00000090;
+}
+
+.form-cadastro input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #00000060;
+    font-size: 1.2rem;
+    color: #00000090;
+    background: transparent;
+    transition: 1s;
+}
+
+.form-cadastro input:hover {
+    border-bottom: 2px solid #004980;
+}
+
+.form-cadastro .buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.container-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+}
+
+.form-login label {
+    font-size: 1.5rem;
+    color: #00000090;
+}
+
+.form-login input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #00000060;
+    font-size: 1.2rem;
+    color: #00000090;
+    background: transparent;
+    transition: 1s;
+}
+
+.form-login input:hover {
+    border-bottom: 2px solid #004980;
+}
+
+.form-login .buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.container-logout {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+.form-logout {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+}
+
+.form-logout input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #00000060;
+    font-size: 1.2rem;
+    color: #00000090;
+    background: transparent;
+    transition: 1s;
+}
+
+.form-logout input:hover {
+    border-bottom: 2px solid #004980;
+}
+
+.form-logout .buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.container-atendimento {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.form-select {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.form-select select {
+
+    height: 40px;
+    text-align: center;
+    padding: 0rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+}
+
+
+.form-select select option {
+    background-color: #fff;
+    color: #333;
+}
+
+.form-select select:focus {
+    outline: none;
+    border-color: #004980;
+    box-shadow: 0 0 5px rgba(0, 73, 128, 0.5);
+}
+
+.form-adiciona-atendimento {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+}
+
+.form-adiciona-atendimento label {
+    font-size: 1.5rem;
+    color: #00000090;
+}
+
+.form-adiciona-atendimento input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #00000060;
+    font-size: 1.2rem;
+    color: #00000090;
+    background: transparent;
+    transition: 1s;
+}
+
+.form-adiciona-atendimento input:hover {
+    border-bottom: 2px solid #004980;
+}
+
+.form-adiciona-atendimento .buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.card-atendimento {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: rgb(178, 221, 178);
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+}
+
+.container-cadastro-alternativo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.form-cadastro-alternativo {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+}
+
+.form-cadastro-alternativo label {
+    font-size: 1.5rem;
+    color: #00000090;
+}
+
+.form-cadastro-alternativo input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #00000060;
+    font-size: 1.2rem;
+    color: #00000090;
+    background: transparent;
+    transition: 1s;
+}
+
+.form-cadastro-alternativo input:hover {
+    border-bottom: 2px solid #004980;
+}
+
+.form-cadastro-alternativo .buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.card-alternativo {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: 10px;
+    width: 90%;
+    max-width: 500px;
+    background-color: rgb(178, 221, 178);
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+}
+
+.container-modal {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.form-modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
+    color: black;
+}
+
+.close-modal {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.close-modal svg {
+    width: 1.5rem;
+    height: auto;
+    color: #555;
+}
+
+.close-modal:hover svg {
+    color: #333;
+}
+
+.form-modal .buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.container-modal-atualizador {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.buttons button {
+    width: 200px;
+    border: none;
+    color: aliceblue;
+    padding: 7px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    font-weight: bold;
+}
+
+.buttons .button-confirmar {
+    background-color: green;
+}
+
+.buttons .button-cancelar {
+    background-color: red;
+}
+
+.card-atendimento {
+    margin-top: 1rem;
+}
+
+.container-dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    align-content: center;
+    text-align: center;
+}
+
+.dashboard-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-chart {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.chart-scroll {
+    overflow-x: auto;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-header {
+        flex-direction: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 0 1rem;
+        height: auto;
+    }
+
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .nav-bar a {
+        margin: 0.5rem 0;
+    }
+
+    .container-footer {
+        border: none;
+        display: flex;
+        padding: 0 1rem;
+        align-items: center;
+        align-content: space-between;
+        background: #004980;
+        color: aliceblue;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 75px;
+    }
+}
