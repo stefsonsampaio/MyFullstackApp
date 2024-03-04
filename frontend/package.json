@@ -1,7 +1,6 @@
 {
   "name": "mybarbershop",
   "version": "0.1.0",
-  "homepage": "http://stefson/frontend/",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
