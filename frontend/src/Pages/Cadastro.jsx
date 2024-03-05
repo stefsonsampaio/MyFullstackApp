@@ -10,7 +10,7 @@ function Cadastro() {
     const fnConfirmar = async (event) => {
         event.preventDefault()
 
-        const urlrest = `http://localhost:1155/cadastro`
+        const urlrest = `${process.env.BACKEND_URL}/cadastro`
 
         try {
             await axios.post(urlrest, {

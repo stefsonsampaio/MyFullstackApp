@@ -9,7 +9,7 @@ function Login() {
 
         const username = event.target.form.username.value
         const password = event.target.form.password.value
-        const urlrest = `http://localhost:1155/login`
+        const urlrest = `${process.env.BACKEND_URL}/login`
 
         try {
             const response = await axios.post(urlrest, {
