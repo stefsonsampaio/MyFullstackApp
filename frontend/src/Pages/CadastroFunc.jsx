@@ -25,7 +25,7 @@ function CadastroFunc() {
 
     const listaFuncionarios = async () => {
         try {
-            const url = `${process.env.BACKEND_URL}/login/${id}/lista-funcionario`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/login/${id}/lista-funcionario`
             const token = localStorage.getItem('token')
 
             const response = await axios.get(url, {
@@ -59,7 +59,7 @@ function CadastroFunc() {
     }
 
     const demiteFuncionario = async () => {
-        const url = `${process.env.BACKEND_URL}/login/${id}/demite-funcionario`
+        const url = `${process.env.REACT_APP_BACKEND_URL}/login/${id}/demite-funcionario`
         try {
             const response = await axios.put(url, {
                     nome_funcionario: selectedFunc.nome_funcionario,
@@ -91,7 +91,7 @@ function CadastroFunc() {
     const fnConfirmar = async (event) => {
         event.preventDefault()
 
-        const url = `${process.env.BACKEND_URL}/login/${id}/cadastra-funcionario`
+        const url = `${process.env.REACT_APP_BACKEND_URL}/login/${id}/cadastra-funcionario`
 
         try {
             const response = await axios.post(url, {

@@ -19,7 +19,7 @@ function Dashboard() {
 
     const fetchData = async () => {
         try {
-            const url = `${process.env.BACKEND_URL}/dashboard/${id}/atendimento-por-tipo`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/dashboard/${id}/atendimento-por-tipo`
             const token = localStorage.getItem('token')
 
             const response = await axios.get(url, {
@@ -86,7 +86,7 @@ function Dashboard() {
 
     const fetchData2 = async () => {
         try {
-            const url = `${process.env.BACKEND_URL}/dashboard/${id}/atendimento-funcionario`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/dashboard/${id}/atendimento-funcionario`
             const token = localStorage.getItem('token')
 
             const response = await axios.get(url, {
@@ -140,7 +140,7 @@ function Dashboard() {
 
     const fetchData3 = async () => {
         try {
-            const url = `${process.env.BACKEND_URL}/dashboard/${id}/atendimento-por-mes`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/dashboard/${id}/atendimento-por-mes`
             const token = localStorage.getItem('token')
 
             const response = await axios.get(url, {

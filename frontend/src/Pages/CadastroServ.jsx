@@ -24,7 +24,7 @@ function CadastroServ() {
 
     const listaServicos = async () => {
         try {
-            const url = `${process.env.BACKEND_URL}/servicos/${id}`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/servicos/${id}`
             const token = localStorage.getItem('token')
 
             const response = await axios.get(url, {
@@ -58,7 +58,7 @@ function CadastroServ() {
     }
 
     const updateServico = async () => {
-        const url = `${process.env.BACKEND_URL}/servicos/${id}/altera-preco`
+        const url = `${process.env.REACT_APP_BACKEND_URL}/servicos/${id}/altera-preco`
 
         try {
             const response = await axios.post( url, {
@@ -92,7 +92,7 @@ function CadastroServ() {
     }
 
     const deleteServico = async () => {
-        const url = `${process.env.BACKEND_URL}/servicos/${id}/deleta-servico`
+        const url = `${process.env.REACT_APP_BACKEND_URL}/servicos/${id}/deleta-servico`
         try {
             const response = await axios.put(url, {
                     id_valor: selectedServico.id_valor
@@ -124,8 +124,8 @@ function CadastroServ() {
     const fnConfirmar = async (event) => {
         event.preventDefault()
 
-        const url = `${process.env.BACKEND_URL}/servicos/${id}/cadastra-servico`
-        const urlValor = `${process.env.BACKEND_URL}/servicos/${id}/adiciona-preco`
+        const url = `${process.env.REACT_APP_BACKEND_URL}/servicos/${id}/cadastra-servico`
+        const urlValor = `${process.env.REACT_APP_BACKEND_URL}/servicos/${id}/adiciona-preco`
 
         try {
             await axios.post(url, {

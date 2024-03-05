@@ -16,7 +16,7 @@ function Atendimento() {
     // Função para listar atendimentos
     const listaAtendimentos = async () => {
         try {
-            const url = `${process.env.BACKEND_URL}/login/${id}/lista-servico`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/login/${id}/lista-servico`
             const token = localStorage.getItem('token')
 
             const response = await axios.get(url, {
@@ -45,7 +45,7 @@ function Atendimento() {
         const token = localStorage.getItem('token')
 
         try {
-            const url = `${process.env.BACKEND_URL}/login/${id}/adiciona-servico`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/login/${id}/adiciona-servico`
 
             const response = await axios.post(url, {
                 nome_funcionario: selectedFuncionario,
@@ -81,7 +81,7 @@ function Atendimento() {
     // Função para listar funcionários
     const listaFuncionario = async () => {
         try {
-            const url = `${process.env.BACKEND_URL}/login/${id}/lista-funcionario`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/login/${id}/lista-funcionario`
             const token = localStorage.getItem('token')
 
             const response = await axios.get(url, {
@@ -108,7 +108,7 @@ function Atendimento() {
     // Função para listar tipos de serviços
     const listaTipoServicos = async () => {
         try {
-            const url = `${process.env.BACKEND_URL}/servicos/${id}`
+            const url = `${process.env.REACT_APP_BACKEND_URL}/servicos/${id}`
             const token = localStorage.getItem('token')
 
             const response = await axios.get(url, {
