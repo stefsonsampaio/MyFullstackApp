@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import InputMask from 'react-input-mask'
 import Modal from '../components/Modal'
 import showToast from '../components/Toast'
@@ -73,7 +73,6 @@ function CadastroFunc() {
             if (response.status === 204) {
                 closeModal()
                 listaFuncionarios()
-                showToast('Funcionário deletado com sucesso!', 'success')
             }
         } catch (error) {
             if (error.response && error.response.status === 400) {
@@ -168,7 +167,7 @@ function CadastroFunc() {
                     <div ref={modalRef}>
                         <h2>{`</Atualizador de funcionário>`}</h2>
                         <p>
-                            <strong>Nome do funcionário:</strong> {selectedFunc.nome_funcionario}
+                            <strong>Nome do funcionário:</strong> {selectedFunc.nome_funcionario}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <strong>Datta de admissão:</strong> {selectedFunc.data_admissao.substring(0,10)}
                         </p>
                         <div className="buttons">

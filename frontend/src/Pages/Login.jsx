@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import showToast from '../components/Toast'
 
 function Login() {
     const navigate = useNavigate()
@@ -19,9 +20,10 @@ function Login() {
             const jsonlogin = response.data
 
             if (jsonlogin.token) {
-                localStorage.setItem("token", jsonlogin.token)
+                localStorage.setItem('token', jsonlogin.token)
                 localStorage.setItem('id', jsonlogin.usuario.id_usuario)
-                navigate(`/atendimento/${jsonlogin.usuario.id_usuario}`)
+                localStorage.setItem('nome', jsonlogin.usuario.usuario)
+                navigate(`/atendimento/${jsonlogin.usuario.id_usuario}?loginSuccess=true`)
                 window.location.reload()
             }
             
@@ -30,7 +32,13 @@ function Login() {
             if (error.response && error.response.status === 401) {
                 localStorage.removeItem('token')
                 navigate('/login')
-            }           
+                showToast('Usuário ou senha incorretos', 'error')
+            }
+            if (error.response && error.response.status === 400) {
+                localStorage.removeItem('token')
+                navigate('/login')
+                showToast('Usuário ou senha não informados', 'error')
+            }      
         }
     }
 

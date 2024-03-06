@@ -19,6 +19,7 @@ function Logout() {
         <div className="container-logout">
             <form className="form-logout">
                 <h1>{`</Logout>`}</h1>
+                <h2>Tem certeza que deseja sair?</h2>
                 <div className="buttons">
                     <button className="button-confirmar" onClick={(event) => fnLogout(event)}>Confirmar</button>
                     <button className="button-cancelar" onClick={(event) => fnCancel(event)}>Cancelar</button>

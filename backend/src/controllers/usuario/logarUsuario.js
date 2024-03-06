@@ -14,13 +14,13 @@ const logarUsuario = async (req, res) => {
         const usuario = await verificaUsuarioPorName(username)
 
         if (!usuario.length) {
-            return res.status(404).json(`Usuário ${username} não existe.`)
+            return res.status(401).json(`Usuário ${username} não existe.`)
         }
 
         const comparaSenha = await bcrypt.compare(password, usuario[0].senha)
 
         if (!comparaSenha) {
-            return res.status(400).json('Email ou senha incorreta')
+            return res.status(401).json('Usuário ou senha incorreta')
         }
 
         const token = jwt.sign({ id: usuario[0].id_usuario }, senhaJWT, {

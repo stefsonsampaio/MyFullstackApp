@@ -15,7 +15,7 @@ function Header() {
     
     return (
         <div className="container-header">
-            <NavLink to='/' className='logo'>{`</myBarbershop>`}</NavLink>
+            <NavLink to='/' className='logo'>{localStorage.getItem('nome') === null ? `</Meu site>` : `${localStorage.getItem('nome')}`}</NavLink>
             {localStorage.getItem('token') === null ? (
                 <nav className="nav-bar">
                     <NavLink className="nav-link" to="/">Home</NavLink>
