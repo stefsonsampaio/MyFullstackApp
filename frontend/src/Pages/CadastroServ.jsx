@@ -76,7 +76,6 @@ function CadastroServ() {
             if (response.status === 201) {
                 closeModal()
                 listaServicos()
-                showToast('Serviço atualizado com sucesso!', 'success')
             }
         } catch (error) {
             if (error.response && error.response.status === 400) {
@@ -106,7 +105,6 @@ function CadastroServ() {
             if (response.status === 204) {
                 closeModal()
                 listaServicos()
-                showToast('Serviço deletado com sucesso!', 'success')
             }
         } catch (error) {
             if (error.response && error.response.status === 400) {
@@ -207,18 +205,18 @@ function CadastroServ() {
             )}
             <Modal isOpen={openModal} setModalOpen={closeModal}>
                 {selectedServico && (
-                    <div ref={modalRef}>
-                        <h2>{`</Atualizador de serviço>`}</h2>
+                    <div ref={modalRef} className="container-main-modal">
+                        <h1>{`</Atualizador de serviço>`}</h1>
                         <p>
-                            <strong>Descrição do serviço:</strong> {selectedServico.descricao}
+                            <strong>Descrição do serviço:</strong> {selectedServico.descricao}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <strong>Valor:</strong> R$ {selectedServico.valor}
                         </p>
-                        <input
+                        <p>Altere o valor para: R$ <input
                             type="number"
                             value={valorServico}
                             onChange={(e) => setValorServico(e.target.value)}
                             placeholder="Novo valor do serviço"
-                        />
+                        /></p>
                         <div className="buttons">
                             <button className="button-confirmar" onClick={updateServico}>
                                 Atualizar

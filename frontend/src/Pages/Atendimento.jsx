@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import showToast from '../components/Toast'
 
 function Atendimento() {
@@ -12,6 +12,8 @@ function Atendimento() {
     const [funcionarios, setFuncionarios] = useState([])
     const [servicos, setServicos] = useState([])
     const navigate = useNavigate()
+
+    const location = useLocation()
 
     // Função para listar atendimentos
     const listaAtendimentos = async () => {
@@ -136,7 +138,12 @@ function Atendimento() {
         listaAtendimentos()
         listaFuncionario()
         listaTipoServicos()
-    }, [])
+        const searchParams = new URLSearchParams(location.search)
+        const loginSuccess = searchParams.get('loginSuccess')
+        if (loginSuccess === 'true') {
+            showToast('Login bem-sucedido', 'success')
+        }
+    }, [location.search])
 
     return (
         <div className="container-atendimento">
