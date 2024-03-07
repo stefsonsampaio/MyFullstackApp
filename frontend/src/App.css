@@ -575,19 +575,4 @@ canvas {
     .nav-bar a {
         margin: 0.5rem 0;
     }
-
-    .container-footer {
-        border: none;
-        display: flex;
-        padding: 0 1rem;
-        align-items: center;
-        align-content: space-between;
-        background: #004980;
-        color: aliceblue;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 75px;
-    }
 }
