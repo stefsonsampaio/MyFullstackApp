@@ -1,8 +1,14 @@
 import 'react-toastify/dist/ReactToastify.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function HomeProtected() {
+    const navigate = useNavigate()
     const id = localStorage.getItem('id')
+
+    if (id === null) {
+        localStorage.clear()
+        navigate('/')
+    }
 
     return(
         <div className="container-home-protected">

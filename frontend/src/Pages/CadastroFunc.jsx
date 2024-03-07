@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import InputMask from 'react-input-mask'
 import Modal from '../components/Modal'
 import showToast from '../components/Toast'
@@ -16,6 +16,11 @@ function CadastroFunc() {
 
     const id = localStorage.getItem('id')
     const token = localStorage.getItem('token')
+
+    if (id === null) {
+        localStorage.clear()
+        navigate('/')
+    }
 
     const handleOutsideClick = (e) => {
         if (modalRef.current && !modalRef.current.contains(e.target)) {

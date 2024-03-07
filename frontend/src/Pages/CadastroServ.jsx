@@ -16,6 +16,11 @@ function CadastroServ() {
     const id = localStorage.getItem('id')
     const token = localStorage.getItem('token')
 
+    if (id === null) {
+        localStorage.clear()
+        navigate('/')
+    }
+
     const handleOutsideClick = (e) => {
         if (modalRef.current && !modalRef.current.contains(e.target)) {
             setOpenModal(false);

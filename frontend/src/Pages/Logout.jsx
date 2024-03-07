@@ -2,6 +2,12 @@ import { useNavigate } from "react-router-dom"
 
 function Logout() {
     const navigate = useNavigate()
+    const id = localStorage.getItem('id')
+
+    if (id === null) {
+        localStorage.clear()
+        navigate('/')
+    }
 
     const fnLogout = async (event) => {
         event.preventDefault()

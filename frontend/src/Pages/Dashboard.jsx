@@ -11,6 +11,11 @@ function Dashboard() {
     const [activeDashboard, setActiveDashboard] = useState('tipo')
     const navigate = useNavigate()
 
+    if (id === null) {
+        localStorage.clear()
+        navigate('/')
+    }
+
     useEffect(() => {
         fetchData()
         fetchData2()
