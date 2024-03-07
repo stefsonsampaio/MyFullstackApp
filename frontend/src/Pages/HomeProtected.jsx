@@ -4,10 +4,16 @@ import { NavLink, useNavigate } from 'react-router-dom'
 function HomeProtected() {
     const navigate = useNavigate()
     const id = localStorage.getItem('id')
+    const val = localStorage.getItem('val')
 
+    
     if (id === null) {
         localStorage.clear()
         navigate('/')
+    }
+    
+    if (!val) {
+        navigate(`/usuario-barrado/${id}`)
     }
 
     return(

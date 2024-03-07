@@ -16,10 +16,16 @@ function CadastroFunc() {
 
     const id = localStorage.getItem('id')
     const token = localStorage.getItem('token')
+    const val = localStorage.getItem('val')
 
+    
     if (id === null) {
         localStorage.clear()
         navigate('/')
+    }
+    
+    if (!val) {
+        navigate(`/usuario-barrado/${id}`)
     }
 
     const handleOutsideClick = (e) => {

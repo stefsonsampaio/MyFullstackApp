@@ -12,12 +12,18 @@ function Atendimento() {
     const [funcionarios, setFuncionarios] = useState([])
     const [servicos, setServicos] = useState([])
     const navigate = useNavigate()
+    const val = localStorage.getItem('val')
 
-    if (id === null) {
+    
+    if (!id) {
         localStorage.clear()
         navigate('/')
     }
-
+    
+    if (!val) {
+        navigate(`/usuario-barrado/${id}`)
+    }
+    
     const location = useLocation()
 
     // Função para listar atendimentos

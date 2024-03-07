@@ -16,6 +16,8 @@ const listaAtendPorFunc = require('../controllers/dashboards/listaAtendPorFunc')
 const ContAtendPorTipo = require('../controllers/dashboards/ContAtendPorTipo')
 const ContAtendPorMes = require('../controllers/dashboards/ContAtendPorMes')
 const deletarServico = require('../controllers/servicos/deletarServico')
+const buscarUsuarios = require('../controllers/admin/buscarUsuarios')
+const authAdmin = require('../middleware/authAdmin')
 const router = express.Router()
 
 router.get('/', (req, res) =>{
@@ -51,5 +53,10 @@ router.get('/servicos/:id/lista-preco', listaPrecoDeServicos)
 router.get('/dashboard/:id/atendimento-funcionario', listaAtendPorFunc)
 router.get('/dashboard/:id/atendimento-por-tipo', ContAtendPorTipo)
 router.get('/dashboard/:id/atendimento-por-mes', ContAtendPorMes)
+
+router.use(authAdmin)
+
+//rotas admin
+router.get('/admin/:id/usuarios', buscarUsuarios)
 
 module.exports = router

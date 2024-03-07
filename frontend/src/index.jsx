@@ -13,6 +13,7 @@ import Dashboard from './Pages/Dashboard'
 import Logout from './Pages/Logout'
 import CadastroFunc from './Pages/CadastroFunc'
 import CadastroServ from './Pages/CadastroServ'
+import UsuarioBarrado from './Pages/UsuarioBarrado'
 
 const publicRoute = createBrowserRouter([{
   path: '/', 
@@ -37,6 +38,7 @@ const protectedRoute = createBrowserRouter([{
     {path: '/cadastra-servico/:id'      , element: <CadastroServ />},
     {path: '/dashboards/:id'            , element: <Dashboard />},
     {path: '/logout'                    , element: <Logout />},
+    {path: '/usuario-barrado/:id'       , element: <UsuarioBarrado />},
     {path: '/*'                         , element: <HomeProtected />}
   ]
 }])

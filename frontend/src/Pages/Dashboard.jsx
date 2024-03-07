@@ -10,10 +10,16 @@ function Dashboard() {
     const [data3, setData3] = useState([])
     const [activeDashboard, setActiveDashboard] = useState('tipo')
     const navigate = useNavigate()
+    const val = localStorage.getItem('val')
 
+    
     if (id === null) {
         localStorage.clear()
         navigate('/')
+    }
+    
+    if (!val) {
+        navigate(`/usuario-barrado/${id}`)
     }
 
     useEffect(() => {

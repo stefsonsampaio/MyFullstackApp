@@ -3,10 +3,16 @@ import { useNavigate } from "react-router-dom"
 function Logout() {
     const navigate = useNavigate()
     const id = localStorage.getItem('id')
+    const val = localStorage.getItem('val')
 
+    
     if (id === null) {
         localStorage.clear()
         navigate('/')
+    }
+    
+    if (!val) {
+        navigate(`/usuario-barrado/${id}`)
     }
 
     const fnLogout = async (event) => {

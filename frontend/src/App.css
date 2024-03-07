@@ -127,6 +127,7 @@ body {
     padding: 20px;
 }
 
+
 .container-home-protected {
     display: flex;
     justify-content: center;
@@ -146,7 +147,7 @@ body {
 .container-home-nav-link {
     width: calc(50% - 10px); /* Define a largura de cada botão com margem entre eles */
 }
-   
+
 
 .container-home-nav-link {
     text-decoration: none;
@@ -183,6 +184,25 @@ body {
 .nav-link {
     text-align: center;
     border: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.container-usuario-barrado {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adicionado para centralizar horizontalmente */
+    min-height: 60vh;
+}
+
+.form-usuario-barrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Adicionado para centralizar verticalmente */
+    padding: 1rem;
+    width: 90%;
+    max-width: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px 2px #00000080;
 }
 
 .container-cadastro {

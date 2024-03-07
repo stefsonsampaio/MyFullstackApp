@@ -23,6 +23,7 @@ function Login() {
                 localStorage.setItem('token', jsonlogin.token)
                 localStorage.setItem('id', jsonlogin.usuario.id_usuario)
                 localStorage.setItem('nome', jsonlogin.usuario.usuario)
+                localStorage.setItem('val', jsonlogin.usuario.usuario_liberado)
                 navigate(`/atendimento/${jsonlogin.usuario.id_usuario}?loginSuccess=true`)
                 window.location.reload()
             }
