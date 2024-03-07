@@ -127,6 +127,39 @@ body {
     padding: 20px;
 }
 
+.container-home-protected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.container-home-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 20px; /* Espaço entre os botões */
+    width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
+    max-width: 600px; /* Define a largura máxima do contêiner para evitar que os botões se espalhem muito */
+}
+
+.container-home-nav-link {
+    width: calc(50% - 10px); /* Define a largura de cada botão com margem entre eles */
+}
+   
+
+.container-home-nav-link {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 20px 40px; /* Tamanho dos botões */
+    margin: 10px;
+    border-radius: 10px; /* Bordas arredondadas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container-home {
     display: flex;
     align-items: center;
@@ -574,20 +607,5 @@ canvas {
 
     .nav-bar a {
         margin: 0.5rem 0;
-    }
-
-    .container-footer {
-        border: none;
-        display: flex;
-        padding: 0 1rem;
-        align-items: center;
-        align-content: space-between;
-        background: #004980;
-        color: aliceblue;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 75px;
     }
 }

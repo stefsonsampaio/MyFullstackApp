@@ -1,12 +1,12 @@
+import { NavLink } from 'react-router-dom'
+
 function Home() {
     return(
-        <div className="container-home">
-            <form className="form-home">
-                <h1>Home</h1>
-                <p>Esse é meu app MyBarberShop.</p>
-                <p>Crie seu usuário e comece a utilizar o aplicativo!</p>
-                <p>Diversas possibilidades surgirão no Header do app após o login!</p>
-            </form>
+        <div className="container-home-protected">
+            <nav className="container-home-buttons">
+                <NavLink className="container-home-nav-link" to={`/login`} >Login</NavLink>
+                <NavLink className="container-home-nav-link" to={`/cadastro`} >Cadastro</NavLink>
+            </nav>
         </div>
     )  
 }
