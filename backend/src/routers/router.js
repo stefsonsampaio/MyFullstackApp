@@ -18,6 +18,7 @@ const ContAtendPorMes = require('../controllers/dashboards/ContAtendPorMes')
 const deletarServico = require('../controllers/servicos/deletarServico')
 const buscarUsuarios = require('../controllers/admin/buscarUsuarios')
 const authAdmin = require('../middleware/authAdmin')
+const validacao = require('../controllers/validacao')
 const router = express.Router()
 
 router.get('/', (req, res) =>{
@@ -29,6 +30,7 @@ router.post('/cadastro', cadastrarUsuario)
 router.post('/login', logarUsuario)
 
 router.use(auth)
+router.get('/validacao', validacao)
 
 //rotas dos atendimentos
 router.post('/login/:id/adiciona-servico', registrarAtendimento)

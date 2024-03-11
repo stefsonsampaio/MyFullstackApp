@@ -6,14 +6,14 @@ function HomeProtected() {
     const id = localStorage.getItem('id')
     const val = localStorage.getItem('val')
 
+    if (!val) {
+        navigate(`/usuario-barrado/${id}`)
+    }
+
     
     if (id === null) {
         localStorage.clear()
         navigate('/')
-    }
-    
-    if (!val) {
-        navigate(`/usuario-barrado/${id}`)
     }
 
     return(

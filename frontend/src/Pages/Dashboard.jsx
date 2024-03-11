@@ -12,16 +12,15 @@ function Dashboard() {
     const navigate = useNavigate()
     const val = localStorage.getItem('val')
 
+    if (!val) {
+        navigate(`/usuario-barrado/${id}`)
+    }
+
     
     if (id === null) {
         localStorage.clear()
         navigate('/')
     }
-    
-    if (!val) {
-        navigate(`/usuario-barrado/${id}`)
-    }
-
     useEffect(() => {
         fetchData()
         fetchData2()

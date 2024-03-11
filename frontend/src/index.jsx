@@ -1,19 +1,39 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import axios from 'axios';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import Home from './Pages/Home'
-import Cadastro from './Pages/Cadastro'
-import Login from './Pages/Login'
+import Home from './Pages/Home';
+import Cadastro from './Pages/Cadastro';
+import Login from './Pages/Login';
 
-import HomeProtected from './Pages/HomeProtected'
-import Atendimento from './Pages/Atendimento'
-import Dashboard from './Pages/Dashboard'
-import Logout from './Pages/Logout'
-import CadastroFunc from './Pages/CadastroFunc'
-import CadastroServ from './Pages/CadastroServ'
-import UsuarioBarrado from './Pages/UsuarioBarrado'
+import HomeProtected from './Pages/HomeProtected';
+import Atendimento from './Pages/Atendimento';
+import Dashboard from './Pages/Dashboard';
+import Logout from './Pages/Logout';
+import CadastroFunc from './Pages/CadastroFunc';
+import CadastroServ from './Pages/CadastroServ';
+import UsuarioBarrado from './Pages/UsuarioBarrado';
+
+const checkTokenValidity = async () => {
+  try {
+    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/validacao`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+
+    if (response.status !== 200) {
+      localStorage.clear()
+      window.location.href = '/login'
+    }
+    
+    return response.status === 200
+  } catch (error) {
+    return false;
+  }
+};
 
 const publicRoute = createBrowserRouter([{
   path: '/', 
@@ -25,7 +45,7 @@ const publicRoute = createBrowserRouter([{
     {path: '/login'                  , element: <Login />},
     {path: '/*'                      , element: <Home />}
   ]
-}])
+}]);
 
 const protectedRoute = createBrowserRouter([{
   path: '/', 
@@ -41,13 +61,16 @@ const protectedRoute = createBrowserRouter([{
     {path: '/usuario-barrado/:id'       , element: <UsuarioBarrado />},
     {path: '/*'                         , element: <HomeProtected />}
   ]
-}])
+}]);
 
-const route = localStorage.getItem('token') === null ? publicRoute : protectedRoute 
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
-  <React.StrictMode>
-    <RouterProvider router={route} />
-  </React.StrictMode>
-)
+checkTokenValidity().then(isValid => {
+  const route = isValid ? protectedRoute : publicRoute
+  const root = ReactDOM.createRoot(document.getElementById('root'))
+
+  root.render(
+    <React.StrictMode>
+      <RouterProvider router={route} />
+    </React.StrictMode>
+  )
+})

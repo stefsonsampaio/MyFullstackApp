@@ -12,7 +12,7 @@ function UsuarioBarrado() {
     const clearStorage = () => {
         localStorage.clear()
         
-        navigate('/login')
+        window.location.href('/')
     }
 
     return(
